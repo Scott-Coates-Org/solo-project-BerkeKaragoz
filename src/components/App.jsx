@@ -8,6 +8,7 @@ import store from "redux/store";
 import { getData } from "redux/user";
 import Desk from "./desk/Desk";
 import Home from "./Home";
+import { ObsProvider } from "./obs/ObsProvider";
 
 export const history = createBrowserHistory();
 
@@ -30,19 +31,19 @@ function App() {
     dispatch(getData());
   }, []);
 
-  const appElement = (
+  return (
     <ErrorBoundary>
-      <BrowserRouter history={history}>
-        <Routes>
-          <Route path="/desk" element={<Desk />} />
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-        </Routes>
-      </BrowserRouter>
+      <ObsProvider>
+        <BrowserRouter history={history}>
+          <Routes>
+            <Route path="/desk" element={<Desk />} />
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Routes>
+        </BrowserRouter>
+      </ObsProvider>
     </ErrorBoundary>
   );
-
-  return appElement;
 }
 
 const AppWithRedux = withReduxProvider(App);

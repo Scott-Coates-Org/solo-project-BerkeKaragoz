@@ -3,6 +3,7 @@ import { Button, Col, FormGroup, Input, Label } from "reactstrap";
 import obs from "../../../web-socket/obs";
 import * as Yup from "yup";
 import Dock from "../Dock";
+import { useObs } from "components/obs/ObsProvider";
 
 const connAuthSchema = Yup.object({
   url: Yup.string().default(""),
@@ -10,6 +11,8 @@ const connAuthSchema = Yup.object({
 });
 
 export default function ConnectionSettings() {
+  const { setConnInfo, setIsLoading } = useObs();
+
   return (
     <Dock header="Connection Settings">
       <Formik
@@ -18,13 +21,19 @@ export default function ConnectionSettings() {
           const { url, password } = values;
           console.log(values);
 
+          setIsLoading(true);
           obs
             .connect(url, password)
             .then((res) => {
               console.info("Connected.", res);
+              setConnInfo(res);
             })
             .catch((err) => {
               console.error("Connection error.", { err });
+              setConnInfo(null);
+            })
+            .finally(() => {
+              setIsLoading(false);
             });
         }}
       >
@@ -52,6 +61,7 @@ export default function ConnectionSettings() {
                 id="cs-password"
                 name="password"
                 type="password"
+                autoComplete="current-password"
                 placeholder="•••••"
               />
             </Col>
