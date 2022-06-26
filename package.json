@@ -12,6 +12,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@reduxjs/toolkit": "^1.5.1",
     "bootstrap": "^4.6.0",
+    "formik": "^2.2.9",
     "history": "^4.10.1",
     "obs-websocket-js": "^5.0.0-beta.2",
     "react": "^17.0.0",
@@ -24,7 +25,8 @@
     "react-router-dom": "6",
     "react-scripts": "^4.0.3",
     "reactstrap": "^8.9.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "dev": "react-scripts start",
