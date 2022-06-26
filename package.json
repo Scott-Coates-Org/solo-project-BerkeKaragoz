@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "^14.18.0"
+    "node": "^16.13.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -12,8 +12,6 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@reduxjs/toolkit": "^1.5.1",
     "bootstrap": "^4.6.0",
-    "firebase": "^8.3.3",
-    "firebase-encode": "^0.0.5",
     "history": "^4.10.1",
     "react": "^17.0.0",
     "react-avatar": "^3.10.0",
