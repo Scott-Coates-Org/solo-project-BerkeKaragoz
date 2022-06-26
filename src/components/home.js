@@ -1,8 +1,5 @@
-import { useDispatch } from "react-redux";
-import Layout from "./layout";
+import { Navigate } from "react-router-dom";
 
 export default function Home(props) {
-  const dispatch = useDispatch();
-
-  return <Layout {...props}>Home</Layout>;
+  return <Navigate to="/desk" />;
 }

@@ -6,6 +6,7 @@ import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import store from "redux/store";
 import { getData } from "redux/user";
+import Desk from "./desk/desk";
 import Home from "./home";
 
 export const history = createBrowserHistory();
@@ -33,6 +34,7 @@ function App() {
     <ErrorBoundary>
       <BrowserRouter history={history}>
         <Routes>
+          <Route path="/desk" element={<Desk />} />
           <Route path="/" element={<Home />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
