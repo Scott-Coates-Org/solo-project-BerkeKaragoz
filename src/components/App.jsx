@@ -1,13 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import ErrorBoundary from "components/error-boundary";
+import ErrorBoundary from "components/ErrorBoundary";
 import { createBrowserHistory } from "history";
 import { useEffect } from "react";
 import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import store from "redux/store";
 import { getData } from "redux/user";
-import Desk from "./desk/desk";
-import Home from "./home";
+import Desk from "./desk/Desk";
+import Home from "./Home";
 
 export const history = createBrowserHistory();
 
