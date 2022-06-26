@@ -26,7 +26,13 @@ export default function ConnectionSettings() {
             .connect(url, password)
             .then((res) => {
               console.info("Connected.", res);
-              setConnInfo(res);
+              obs.call("GetVersion").then((info) => {
+                console.info("Full info:", info);
+                setConnInfo({
+                  obsWebSocketVersion: info.obsWebSocketVersion,
+                  obsVersion: info.obsVersion,
+                });
+              });
             })
             .catch((err) => {
               console.error("Connection error.", { err });

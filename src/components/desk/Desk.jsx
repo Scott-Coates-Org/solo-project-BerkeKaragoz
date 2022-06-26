@@ -52,7 +52,8 @@ export default function Desk(props) {
               {connInfo && (
                 <span>
                   {Object.entries(connInfo).map(
-                    (e, i) => `${e[0]}: ${e[1]}${e.length === i ? "" : ", "}`,
+                    (e, i, arr) =>
+                      `${e[0]}: ${e[1]}${arr.length - 1 === i ? "" : ", "}`,
                   )}
                 </span>
               )}
