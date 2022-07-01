@@ -15,6 +15,7 @@ import { obs } from "../../web-socket/obs";
 import ConnectionSettings from "./docks/ConnectionSettings";
 import { useObs } from "components/obs/ObsProvider";
 import SceneList from "./docks/SceneList";
+import StreamControls from "./docks/StreamControls";
 
 const FCol = (props) => <Col className="d-flex" {...props} />;
 
@@ -30,6 +31,9 @@ export default function Desk(props) {
             <Row noGutters>
               <FCol>
                 <SceneList />
+              </FCol>
+              <FCol>
+                <StreamControls />
               </FCol>
               <FCol>
                 <ConnectionSettings />
